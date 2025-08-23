@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تم الإرسال بنجاح</title>
+  <style>
+    :root {
+      --primary: #1e2340;
+      --accent: #6cd70f;
+      --muted: #5a627a;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: saturate(180%) blur(10px);
+      background: rgba(255,255,255,0.9);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--primary);
+    }
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--primary);
+      opacity: .85;
+    }
+    .nav-links a:hover { opacity: 1; }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .card {
+      background: var(--card);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      max-width: 500px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+    p {
+      font-size: 16px;
+      color: var(--muted);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(108,215,15,0.3);
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .btn:hover { filter: brightness(0.95); transform: translateY(-1px); }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- ناف بار -->
+  <header>
+    <div class="nav">
+      <div class="brand">45Up</div>
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#jobs">الوظائف</a></li>
+        <li><a href="index.html#apply">التقديم</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- المحتوى -->
+  <main>
+    <div class="card">
+      <h1>✅ تم إرسال طلبك بنجاح</h1>
+      <p>شكرًا لك على تقديم الطلب. سنقوم بمراجعته والتواصل معك في أقرب وقت ممكن.</p>
+      <a href="index.html" class="btn">العودة إلى الصفحة الرئيسية</a>
+    </div>
+  </main>
+
+  <!-- فوتر -->
+  <footer>
+    © <span id="year"></span> 45Up — جميع الحقوق محفوظة
+  </footer>
+  <script src="./scripts.js"> </script>
+<script>
+document.getElementById("applicationForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const status = document.getElementById("formStatus");
+  const submitBtn = form.querySelector("button[type='submit']");
+
+  // تعطيل الزر وتغيير النص
+  submitBtn.disabled = true;
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = "Sending...";
+
+  const cvFile = form.cv.files[0];
+  const reader = new FileReader();
+
+  reader.onload = async function() {
+    const base64File = reader.result.split(",")[1];
+
+    const data = {
+      fullName: form.fullName.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      position: form.position.value,
+      availability: form.availability.value,
+      message: form.message.value,
+      cvFile: base64File,
+      cvFileName: cvFile.name,
+      cvMimeType: cvFile.type
+    };
+
+    try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwk68bBOqifkHLNobDVlZMy8UdUKxvOvFs8uxVxG9Yjk-ymUGh3NslacBJSCmzEfO_1-g/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
+      });
+
+      const text = await response.text();
+      const result = JSON.parse(text);
+
+      if (result.result === "success") {
+        // ✅ التوجيه لصفحة نجاح
+        window.location.href = "success.html";
+      } else {
+        status.textContent = "❌ خطأ: " + result.message;
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    } catch (error) {
+      status.textContent = "⚠️ حدث خطأ أثناء الإرسال: " + error.message;
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  };
+
+  reader.readAsDataURL(cvFile);
+});
+</script>
+
+
+</body>
+</html>
