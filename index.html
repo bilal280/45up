@@ -6,11 +6,6 @@
   <title data-i18n="meta.title">التقديم على الوظائف</title>
   <meta name="description" content="45Up LMS - نظام تعليمي رقمي للمدارس والمعلمين" />
   <style>
-    .highlight {
-  color: var(--accent);   /* يستعمل اللون اللي عرفته سابقاً */
-  font-weight: 700;       /* يخليها بارزة أكثر */
-}
-
     :root {
       --primary: #1e2340; /* main brand color */
       --primary-900: #151a34;
@@ -131,7 +126,15 @@
     .job .head { display:flex; flex-wrap: wrap; gap:10px; align-items:center; justify-content: space-between; }
     .job .cta { display:flex; gap:10px; flex-wrap: wrap; }
 
-    .job h4 { margin: 10px 0 6px; color: var(--primary); }
+    .job h4 { margin: 10px 0 6px; color: var(--accent); }
+    .chip { color: var(--accent); border-color: rgba(108,215,15,0.35); background: #f4ffea; }
+
+    /* Mobile simple nav (no side drawer) */
+    .menu-toggle { display:none; }
+    @media (max-width: 768px) {
+      .nav-links { display:flex !important; }
+      .menu-toggle { display:inline-block !important; }
+    }
 
     /* Steps */
     .steps { display: grid; gap: 14px; }
@@ -300,20 +303,22 @@ input[type="file"]::file-selector-button:hover {
   <header>
 
     <div class="container nav">
-      <nav style="display:flex; align-items:center; gap:14px; width:100%;">
-<div class="brand" style="display:flex; align-items:center; gap:8px;">
-  <img src="./photo_2025-08-23_22-51-45.jpg" alt="45UP Logo" style="height:40px;">
-  <span>45UP</span>
-</div>
-        <ul style="display:flex; gap:12px; list-style:none; margin:0; padding:0; margin-inline-start:auto;">
-          <li><a href="#about" style="text-decoration:none; color:var(--primary); font-weight:700; opacity:.9;">عنّا</a></li>
-          <li><a href="#jobs" style="text-decoration:none; color:var(--primary); font-weight:700; opacity:.9;">الوظائف</a></li>
-          <li><a href="#apply" style="text-decoration:none; color:var(--primary); font-weight:700; opacity:.9;">التقديم</a></li>
+      <nav style="display:flex; align-items:center; gap:14px; width:100%; position:relative;">
+
+        <div class="brand" style="display:flex; align-items:center; gap:8px;">
+          <img src="./photo_2025-08-23_22-51-45.jpg" alt="45UP Logo" style="height:40px;">
+          <span>45UP</span>
+        </div>
+        <ul class="nav-links" style="display:flex; gap:12px; list-style:none; margin:0; padding:0; margin-inline-start:auto;">
+          <li><a href="#about" style="text-decoration:none; color:var(--primary); font-weight:700; opacity:.9;" data-i18n="nav.about">عنّا</a></li>
+          <li><a href="#jobs" style="text-decoration:none; color:var(--primary); font-weight:700; opacity:.9;" data-i18n="nav.jobs">الوظائف</a></li>
+          <li><a href="#apply" style="text-decoration:none; color:var(--primary); font-weight:700; opacity:.9;" data-i18n="nav.apply">التقديم</a></li>
         </ul>
         <div class="lang-switch" role="group" aria-label="Language switch">
           <button id="btn-ar" class="lang-btn active" data-lang="ar">العربية</button>
-          <button id="btn-en" class="lang-btn" data-lang="en">English</button>
+          <button id="btn-en" class="lang-btn"  data-lang="en">English</button>
         </div>
+    
       </nav>
     </div>
   </header>
@@ -435,18 +440,18 @@ input[type="file"]::file-selector-button:hover {
 
           <h4 data-i18n="jobs.sales.respTitle">المسؤوليات</h4>
           <ul class="req">
-            <li data-i18n="jobs.sales.resp1">التعرّف على المدارس والمؤسسات التعليمية والتواصل معهم للترويج للنظام.</li>
+            <li data-i18n="jobs.sales.resp1">التعرّف على المدارس، مراكز التدريب، والمؤسسات التعليمية والتواصل معهم للترويج لنظام LMS.</li>
             <li data-i18n="jobs.sales.resp2">وضع وتنفيذ استراتيجيات بيع مخصصة لقطاع التعليم.</li>
-            <li data-i18n="jobs.sales.resp3">تقديم عروض توضيحية واجتماعات تعريفية مع متخذي القرار.</li>
-            <li data-i18n="jobs.sales.resp4">التفاوض على العقود وإغلاق الصفقات وتحقيق الأهداف البيعية.</li>
-            <li data-i18n="jobs.sales.resp5">إعداد تقارير دورية وتحليل السوق ورفعها للإدارة.</li>
+            <li data-i18n="jobs.sales.resp3">تقديم عروض توضيحية واجتماعات تعريفية مع متخذي القرار في المدارس.</li>
+            <li data-i18n="jobs.sales.resp4">التفاوض على العقود، إغلاق الصفقات، وتحقيق الأهداف البيعية المتفق عليها.</li>
+            <li data-i18n="jobs.sales.resp5">إعداد تقارير دورية عن المبيعات وتحليل السوق ورفعها للإدارة.</li>
           </ul>
 
-          <h4 data-i18n="jobs.marketer.reqTitle">المهارات والخبرات المطلوبة</h4>
+          <h4 data-i18n="jobs.sales.skillsTitle">المهارات والخبرات المطلوبة</h4>
           <ul class="req">
-            <li data-i18n="jobs.marketer.req1">3+ سنوات خبرة في المبيعات أو تطوير الأعمال.</li>
-            <li data-i18n="jobs.marketer.req2">مهارات قوية في التواصل والتفاوض والعرض التقديمي.</li>
-            <li data-i18n="jobs.marketer.req3">القدرة على بناء علاقات طويلة المدى مع العملاء.</li>
+            <li data-i18n="jobs.sales.skill1">خبرة لا تقل عن 3 سنوات في مجال المبيعات أو تطوير الأعمال.</li>
+            <li data-i18n="jobs.sales.skill2">مهارات قوية في التواصل، التفاوض، والعرض التقديمي.</li>
+            <li data-i18n="jobs.sales.skill3">القدرة على بناء علاقات طويلة المدى والحفاظ عليها مع العملاء.</li>
           </ul>
 
           <h4 data-i18n="jobs.sales.prefTitle">المؤهلات المفضلة</h4>
@@ -495,56 +500,63 @@ input[type="file"]::file-selector-button:hover {
     <form id="applicationForm" novalidate>
   <div class="form-grid cols-2">
     <div>
-      <label for="fullName">الاسم الكامل</label>
-      <input id="fullName" name="fullName" type="text" placeholder="اكتب اسمك الكامل" required />
+      <label data-i18n="form.fullName.label" for="fullName">الاسم الكامل</label>
+      <input id="fullName" name="fullName" data-i18n-placeholder="form.fullName.placeholder" type="text" placeholder="اكتب اسمك الكامل" required />
     </div>
     <div>
-      <label for="email">البريد الإلكتروني</label>
+      <label data-i18n="form.email.label" for="email">البريد الإلكتروني</label>
       <input id="email" name="email" type="email" placeholder="example@mail.com" required />
     </div>
     <div>
-      <label for="phone">رقم الهاتف</label>
+      <label data-i18n="form.phone.label" for="phone">رقم الهاتف</label>
       <input id="phone" name="phone" type="tel" placeholder="05XXXXXXXX" required />
     </div>
     <div>
-      <label for="position">الوظيفة</label>
+      <label data-i18n="form.position.label" for="position">الوظيفة</label>
       <select id="position" name="position" required>
-        <option value="">اختر الوظيفة</option>
-        <option value="fullstack">مطوّر Full Stack (ASP.NET Core)</option>
-        <option value="sales">موظف مبيعات</option>
+        <option data-i18n="form.position.optionDefault" value="">اختر الوظيفة</option>
+        <option data-i18n="form.position.optionProgrammer" value="fullstack">مطوّر Full Stack (ASP.NET Core)</option>
+        <option data-i18n="form.position.optionMarketer" value="sales">موظف مبيعات</option>
       </select>
     </div>
     <div>
-  <label>نوع الدوام</label>
+  <label data-i18n="form.availability.label" >نوع الدوام</label>
   <div class="availability">
-    <label>
-      <input type="radio" name="availability" value="full" checked>
-      دوام كامل
+    <label >
+      <input  type="radio" name="availability" value="full" checked>
+      <span data-i18n="form.availability.full" ></span> 
     </label>
     <label>
       <input type="radio" name="availability" value="part">
-      دوام جزئي
+      <span data-i18n="form.availability.part" ></span> 
+
     </label>
   </div>
 </div>
     <div>
-      <label for="cv">السيرة الذاتية (CV)</label>
+      <label for="cv" data-i18n="form.cv.label">السيرة الذاتية (CV)</label>
       <input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx" required />
-      <div class="help">الصيغ المسموح بها: PDF, DOC, DOCX — الحجم الأقصى 5MB</div>
+      <div class="help" data-i18n="form.cv.help">الصيغ المسموح بها: PDF, DOC, DOCX — الحجم الأقصى 5MB</div>
     </div>
   </div>
 
-  <div class="full">
-    <label for="message">رسالة مختصرة</label>
-    <textarea id="message" name="message" placeholder="ملاحظات تود اضافتها" required></textarea>
+  <div class="form-grid cols-2" style="margin-top:12px;">
+    <div>
+      <label for="salary" data-i18n="form.salary.label">الراتب المتوقع</label>
+      <input id="salary" name="salary" type="text" placeholder="مثال: 5000 SAR" data-i18n-placeholder="form.salary.placeholder" />
+    </div>
+    <div>
+      <label for="message" data-i18n="form.message.label">رسالة مختصرة (اختياري)</label>
+      <textarea id="message" name="message" placeholder="ملاحظات تود إضافتها" data-i18n-placeholder="form.message.placeholder"></textarea>
+    </div>
   </div>
 
   <div class="actions">
-    <button type="submit" class="btn-primary">إرسال الطلب</button>
+    <button data-i18n="form.submit" type="submit" class="btn-primary">إرسال الطلب</button>
     <div id="formStatus" class="status" role="status" aria-live="polite"></div>
   </div>
 
-  <div class="help" style="margin-top:8px;">ملاحظة: سنقوم بربط هذا النموذج مع Google Sheets لاحقًا.</div>
+  
 </form>
 
     </section>
@@ -562,72 +574,74 @@ input[type="file"]::file-selector-button:hover {
 
   <script src="./scripts.js"></script>
   <script>
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav ul");
-
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-</script>
-<script>
 document.getElementById("applicationForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const form = e.target;
-  const status = document.getElementById("formStatus");
-  const submitBtn = form.querySelector("button[type='submit']");
+  let form = e.target;
+  let submitBtn = form.querySelector("button[type=submit]");
+  let statusEl = document.getElementById("formStatus");
 
   // تعطيل الزر وتغيير النص
   submitBtn.disabled = true;
-  const originalText = submitBtn.textContent;
-  submitBtn.textContent = "Sending...";
+  submitBtn.innerText = "⏳ جاري الإرسال...";
 
-  const cvFile = form.cv.files[0];
-  const reader = new FileReader();
+  let cvFile = form.cv.files[0];
+  let fileBase64 = "";
 
-  reader.onload = async function() {
-    const base64File = reader.result.split(",")[1];
+  if (cvFile) {
+    fileBase64 = await toBase64(cvFile);
+  }
 
-    const data = {
-      fullName: form.fullName.value,
-      email: form.email.value,
-      phone: form.phone.value,
-      position: form.position.value,
-      availability: form.availability.value,
-      message: form.message.value,
-      cvFile: base64File,
-      cvFileName: cvFile.name,
-      cvMimeType: cvFile.type
-    };
+  let formData = new FormData();
+  formData.append("fullName", form.fullName.value);
+  formData.append("email", form.email.value);
+  formData.append("phone", form.phone.value);
+  formData.append("position", form.position.value);
+  formData.append("availability", form.availability.value);
+  formData.append("salary", form.salary.value);
+  formData.append("message", form.message.value);
 
-    try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbwk68bBOqifkHLNobDVlZMy8UdUKxvOvFs8uxVxG9Yjk-ymUGh3NslacBJSCmzEfO_1-g/exec", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" }
-      });
+  if (cvFile) {
+    formData.append("file", fileBase64.replace(/^.*,/, "")); // فقط البيانات Base64
+    formData.append("fileName", cvFile.name);
+    formData.append("mimeType", cvFile.type);
+  }
 
-      const text = await response.text();
-      const result = JSON.parse(text);
+  try {
+    let response = await fetch("https://script.google.com/macros/s/AKfycbxzacaDeJpxpzn4aRJXJkiHvNGE7P9wUGvdmnvr3d8tod-irgPsxmbF-Z5Gc0lY649NYw/exec", {
+      method: "POST",
+      body: formData
+    });
 
-      if (result.result === "success") {
-        // ✅ التوجيه لصفحة نجاح
-        window.location.href = "success.html";
-      } else {
-        status.textContent = "❌ خطأ: " + result.message;
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-      }
-    } catch (error) {
-      status.textContent = "⚠️ حدث خطأ أثناء الإرسال: " + error.message;
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
+    let result = await response.json();
+    if (result.result === "success") {
+      // ✅ عند النجاح → الانتقال إلى صفحة success.html
+      window.location.href = "success.html";
+    } else {
+      statusEl.innerText = "❌ خطأ في الرفع: " + result.error;
+      resetButton();
     }
-  };
+  } catch (err) {
+    statusEl.innerText = "⚠️ تعذر الاتصال بالخادم";
+    resetButton();
+  }
 
-  reader.readAsDataURL(cvFile);
+  function resetButton() {
+    submitBtn.disabled = false;
+    submitBtn.innerText = "إرسال الطلب";
+  }
 });
+
+function toBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = (error) => reject(error);
+  });
+}
 </script>
+
 
    
 </html>

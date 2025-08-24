@@ -15,6 +15,13 @@
     ar: {
       'meta.title': 'التقديم على الوظائف',
       brand: '45UP',
+      'nav.main': 'الرئيسية',
+      'nav.about': 'عنّا',
+      'nav.jobs': 'الوظائف',
+      'nav.apply': 'التقديم',
+      'nav.about': 'عنّا',
+      'nav.jobs': 'الوظائف',
+      'nav.apply': 'التقديم',
       'hero.badge': '45Up LMS',
       'hero.title': "نظام <span class='highlight'>تعليمي رقمي</span> للمدارس والمعلمين",
       'hero.subtitle': 'يوفّر أدوات متكاملة لإدارة الصفوف، متابعة أداء الطلاب، وتنظيم العملية التعليمية بشكل فعّال وسلس. نمكّن المدارس من التحول الرقمي وتجربة تعليمية متطورة وسهلة الاستخدام.',
@@ -56,17 +63,17 @@
       'jobs.sales.badge': 'مبيعات',
       'jobs.sales.title': 'موظف مبيعات',
       'jobs.sales.respTitle': 'المسؤوليات',
-      'jobs.sales.resp1': 'التواصل مع المدارس والمراكز للترويج للنظام.',
-      'jobs.sales.resp2': 'تنفيذ استراتيجيات بيع لقطاع التعليم.',
-      'jobs.sales.resp3': 'تقديم عروض واجتماعات مع متخذي القرار.',
-      'jobs.sales.resp4': 'التفاوض، إغلاق الصفقات، وتحقيق الأهداف.',
-      'jobs.sales.resp5': 'إعداد تقارير مبيعات وتحليل السوق.',
+      'jobs.sales.resp1': 'التعرّف على المدارس، مراكز التدريب، والمؤسسات التعليمية والتواصل معهم للترويج لنظام LMS.',
+      'jobs.sales.resp2': 'وضع وتنفيذ استراتيجيات بيع مخصصة لقطاع التعليم.',
+      'jobs.sales.resp3': 'تقديم عروض توضيحية واجتماعات تعريفية مع متخذي القرار في المدارس.',
+      'jobs.sales.resp4': 'التفاوض على العقود، إغلاق الصفقات، وتحقيق الأهداف البيعية المتفق عليها.',
+      'jobs.sales.resp5': 'إعداد تقارير دورية عن المبيعات وتحليل السوق ورفعها للإدارة.',
       'jobs.sales.skillsTitle': 'المهارات والخبرات المطلوبة',
-      'jobs.sales.skill1': '3+ سنوات في المبيعات أو تطوير الأعمال.',
-      'jobs.sales.skill2': 'مهارات اتصال وتفاوض وعرض قوية.',
-      'jobs.sales.skill3': 'القدرة على بناء علاقات طويلة المدى.',
+      'jobs.sales.skill1': 'خبرة لا تقل عن 3 سنوات في مجال المبيعات أو تطوير الأعمال.',
+      'jobs.sales.skill2': 'مهارات قوية في التواصل، التفاوض، والعرض التقديمي.',
+      'jobs.sales.skill3': 'القدرة على بناء علاقات طويلة المدى والحفاظ عليها مع العملاء.',
       'jobs.sales.prefTitle': 'المؤهلات المفضلة',
-      'jobs.sales.pref1': 'خبرة في بيع أنظمة تعليمية أو حلول تقنية.',
+      'jobs.sales.pref1': 'خبرة سابقة في بيع أنظمة تعليمية أو حلول تقنية (LMS / EdTech).',
       'jobs.sales.pref2': 'شبكة علاقات مع مدارس أو مؤسسات تعليمية.',
 
       'steps.title': 'خطوات التقديم',
@@ -94,8 +101,10 @@
       'form.position.optionDefault': 'اختر الوظيفة',
       'form.position.optionFullstack': 'مطوّر Full Stack (ASP.NET Core)',
       'form.position.optionSales': 'موظف مبيعات',
-      'form.message.label': 'رسالة مختصرة',
-      'form.message.placeholder': 'لماذا أنت مناسب لهذه الوظيفة؟',
+      'form.message.label': 'رسالة مختصرة (اختياري)',
+      'form.message.placeholder': 'ملاحظات تود إضافتها',
+      'form.salary.label': 'الراتب المتوقع',
+      'form.salary.placeholder': 'مثال: 5000 SAR',
       'form.cv.label': 'السيرة الذاتية (CV)',
       'form.cv.help': 'الصيغ المسموح بها: PDF, DOC, DOCX — الحجم الأقصى 5MB',
       'form.submit': 'إرسال الطلب',
@@ -111,17 +120,22 @@
       'v.cv.type': 'نوع الملف غير مدعوم. استخدم PDF أو DOC أو DOCX.',
       'v.cv.size': 'حجم الملف يتجاوز 5MB.',
       'v.success': 'تم استلام طلبك بنجاح. سنقوم بالتواصل معك قريبًا.',
-      'v.error': 'حدث خطأ غير متوقع. حاول مجددًا.'
-    },
+      'v.error': 'حدث خطأ غير متوقع. حاول مجددًا.'}
+    ,
     en: {
       'meta.title': 'Job Application',
       brand: '45UP',
+      'nav.main': 'Home',
+      'nav.about': 'About',
+      'nav.jobs': 'Jobs',
+      'nav.apply': 'Apply',
       'hero.badge': '45Up LMS',
       'hero.title': 'A digital Learning Management System for schools and educators',
       'hero.subtitle': 'It provides a comprehensive set of tools for managing classes, tracking student performance, and organizing the educational process efficiently and seamlessly. Our mission is to empower schools in their digital transformation and deliver a modern, user‑friendly learning experience.',
       'hero.cta.apply': 'Apply Now',
       'hero.cta.viewJobs': 'View Jobs',
       'about.title': 'About 45Up',
+      
       'about.text': '45Up is a digital Learning Management System (LMS) designed for schools and individual educators. It provides a comprehensive set of tools for managing classes, tracking student performance, and organizing the educational process efficiently and seamlessly. Our mission is to empower schools in their digital transformation journey and deliver a modern, user friendly learning experience.',
       'about.point1': 'Unified management for classes, assignments, and exams.',
       'about.point2': 'Real‑time dashboards and deeper insights for progress tracking.',
@@ -131,7 +145,7 @@
       'jobs.title': 'Available Positions',
       'jobs.apply': 'Apply for this role',
       'jobs.fullstack.badge': 'Tech',
-      'jobs.fullstack.title': 'Job Vacancy: Senior ASP.NET Core Full Stack Developer',
+      'jobs.fullstack.title': ' Senior ASP.NET Core Full Stack Developer',
       'jobs.fullstack.meta': 'Full-time · Hybrid',
       'jobs.fullstack.respTitle': 'Responsibilities',
       'jobs.fullstack.resp1': 'Lead the development of web applications using ASP.NET Core, ensuring adherence to best practices and clean architecture.',
@@ -153,16 +167,21 @@
       'jobs.fullstack.pref1': 'Bachelor’s or Master’s degree in Computer Science, Software Engineering, or a related field.',
       'jobs.fullstack.pref2': 'Previous experience working on large-scale or enterprise-level projects.',
       'jobs.fullstack.pref3': 'Strong leadership and communication skills with the ability to work under pressure and deliver innovative solutions.',
-      'jobs.marketer.badge': 'Marketing',
-      'jobs.marketer.title': 'Role: Marketer',
-      'jobs.marketer.meta': 'Full-time · Remote',
-      'jobs.marketer.reqTitle': 'Job Requirements',
-      'jobs.marketer.req1': 'Experience in digital marketing and campaign management',
-      'jobs.marketer.req2': 'Data analysis using analytics tools',
-      'jobs.marketer.req3': 'Craft engaging SEO-friendly content',
-      'jobs.marketer.req4': 'Ability to plan, measure, and continuously improve',
-      'jobs.marketer.stackTitle': 'Tools of the trade',
-      'jobs.marketer.benefits': 'Supportive team, clear goals, and performance incentives.',
+      'jobs.sales.badge': 'Sales',
+      'jobs.sales.title': 'Sales Executive',
+      'jobs.sales.respTitle': 'Responsibilities',
+      'jobs.sales.resp1': 'Identify schools, training centers, and educational institutions and reach out to them to promote the LMS.',
+      'jobs.sales.resp2': 'Develop and execute tailored sales strategies for the education sector.',
+      'jobs.sales.resp3': 'Conduct demos and introductory meetings with school decision-makers.',
+      'jobs.sales.resp4': 'Negotiate contracts, close deals, and achieve agreed sales targets.',
+      'jobs.sales.resp5': 'Prepare periodic sales reports, analyze the market, and submit insights to management.',
+      'jobs.sales.skillsTitle': 'Required Skills & Experience',
+      'jobs.sales.skill1': 'Minimum of 3 years of experience in sales or business development.',
+      'jobs.sales.skill2': 'Strong communication, negotiation, and presentation skills.',
+      'jobs.sales.skill3': 'Ability to build and maintain long-term client relationships.',
+      'jobs.sales.prefTitle': 'Preferred Qualifications',
+      'jobs.sales.pref1': 'Previous experience selling educational systems or tech solutions (LMS / EdTech).',
+      'jobs.sales.pref2': 'A solid network with schools or educational institutions.',
       'steps.title': 'Application Steps',
       'steps.1.title': 'Choose a role',
       'steps.1.text': 'Review requirements and pick your match.',
@@ -184,10 +203,12 @@
       'form.phone.placeholder': '+1 555 000 1234',
       'form.position.label': 'Position',
       'form.position.optionDefault': 'Select a position',
-      'form.position.optionProgrammer': 'Programmer',
+      'form.position.optionProgrammer': 'Programmer (Optional)',
       'form.position.optionMarketer': 'Marketer',
-      'form.message.label': 'Short Message',
-      'form.message.placeholder': 'Why are you a good fit for this role?',
+       'form.message.label': 'Short Message (Optional)',
+      'form.message.placeholder': 'Any notes you want to add',
+      'form.salary.label': 'Expected Salary',
+      'form.salary.placeholder': 'e.g., 5000 SAR',
       'form.cv.label': 'Resume (CV)',
       'form.cv.help': 'Allowed: PDF, DOC, DOCX — Max 5MB',
       'form.submit': 'Submit Application',
@@ -318,11 +339,12 @@
     const email = form.email.value.trim();
     const phone = form.phone.value.trim();
     const position = form.position.value;
-    const message = form.message.value.trim();
+    const message = (form.message.value || '').trim();
+    const salary = (form.salary?.value || '').trim();
     const availability = (form.availability.value || 'full');
     const cv = form.cv.files[0];
 
-    if (!fullName || !email || !phone || !position || !message || !cv || !availability) {
+    if (!fullName || !email || !phone || !position || !cv || !availability) {
       statusEl.textContent = t('v.required');
       statusEl.classList.add('error');
       return;
@@ -336,7 +358,7 @@
     try {
       const payload = {
         timestamp: new Date().toISOString(),
-        fullName, email, phone, position, message, availability,
+        fullName, email, phone, position, message, salary, availability,
         // cv: { name: cv.name, type: cv.type, content: await toBase64(cv) }
       };
 
